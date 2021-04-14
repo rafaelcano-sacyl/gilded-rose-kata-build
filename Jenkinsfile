@@ -13,5 +13,11 @@ pipeline {
       }
     }
 
+    stage('blue-ocean') {
+      steps {
+        echo 'Pipeline creada en Blue Ocean'
+      }
+    }
+
   }
 }
