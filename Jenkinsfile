@@ -27,6 +27,11 @@ pipeline {
                 sh './gradlew javadoc'
             }
         }
+        stage('JaCoCo') {
+            steps {
+                sh './gradlew jacocoTestReport'
+            }
+        }
     }
 
     post {
