@@ -37,6 +37,7 @@ pipeline {
     post {
         always {
             javadoc javadocDir: 'build/docs/javadoc', keepAll: false
+            jacoco()
         }
     }
 }
