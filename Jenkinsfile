@@ -22,11 +22,6 @@ pipeline {
                 sh './gradlew test'
             }
         }
-        stage('Check') {
-            steps {
-                sh './gradlew check'
-            }
-        }
         stage('JavaDoc') {
             steps {
                 sh './gradlew javadoc'
@@ -35,6 +30,11 @@ pipeline {
         stage('JaCoCo') {
             steps {
                 sh './gradlew jacocoTestReport'
+            }
+        }
+        stage('Check') {
+            steps {
+                sh './gradlew check'
             }
         }
     }
