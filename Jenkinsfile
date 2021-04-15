@@ -1,23 +1,21 @@
 pipeline {
   agent any
+
   stages {
-    stage('compile') {
+    stage('Clean') {
       steps {
-        sh 'gradlew clean compileJava test'
+        sh 'gradlew clean'
       }
     }
-
-    stage('echo') {
+    stage('Compile') {
       steps {
-        echo 'Hola'
+        sh 'gradlew compileJava'
       }
     }
-
-    stage('blue-ocean') {
+    stage('Tests') {
       steps {
-        echo 'Pipeline creada en Blue Ocean'
+        sh 'gradlew test'
       }
     }
-
   }
 }
