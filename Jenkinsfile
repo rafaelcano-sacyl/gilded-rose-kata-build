@@ -4,17 +4,17 @@ pipeline {
   stages {
     stage('Clean') {
       steps {
-        sh 'gradlew clean'
+        sh './gradlew clean'
       }
     }
     stage('Compile') {
       steps {
-        sh 'gradlew compileJava'
+        sh './gradlew compileJava'
       }
     }
     stage('Tests') {
       steps {
-        sh 'gradlew test'
+        sh './gradlew test'
       }
     }
   }
